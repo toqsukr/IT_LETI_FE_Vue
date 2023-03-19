@@ -3,11 +3,13 @@ import {ref, watchEffect} from "vue"
 
 const darkTheme = ref(false)
 const timer = ref(new Date().toLocaleTimeString())
+
 watchEffect(() => {
     setInterval(() => {
         timer.value = new Date().toLocaleTimeString()
     }, 1000)
 })
+
 const handleTheme = () => {
     darkTheme.value = !darkTheme.value;
     document.documentElement.style.setProperty('--main-bg-color', darkTheme.value ? "rgba(8, 11, 19, 0.964)" :"rgb(230, 230, 230)")
@@ -37,11 +39,13 @@ const handleTheme = () => {
         background-color: var(--main-bg-color);
         transition: background-color 1s;
     }
+
     #app {
         background-color: var(--main-bg-color);
         transition: background-color 1s;
         margin: 10px 0 0 0;
     }
+
     #boxbtn {
         height: 50px !important;
         width: 50px !important;
@@ -83,4 +87,5 @@ const handleTheme = () => {
         transition: color 1s;
         color: var(--main-text) !important;
     }
+    
 </style>
