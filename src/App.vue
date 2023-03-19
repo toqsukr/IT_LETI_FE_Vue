@@ -14,9 +14,9 @@ const handleTheme = () => {
     darkTheme.value = !darkTheme.value;
     document.documentElement.style.setProperty('--main-bg-color', darkTheme.value ? "rgba(8, 11, 19, 0.964)" :"rgb(230, 230, 230)")
     document.getElementById("timertext").style.setProperty('--main-text', darkTheme.value ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)")
-    document.getElementById("boxbtn").style.setProperty('margin-top', "-200px")
+    document.getElementById("boxbtn").style.setProperty('margin', "-200px 0 250px 10px")
     setTimeout(() => {
-        document.getElementById("boxbtn").style.setProperty('margin-top', "0px")
+        document.getElementById("boxbtn").style.setProperty('margin', "0 0 50px 10px")
     }, 400)
     setTimeout(() => {
         document.getElementById("boxbtn").style.setProperty('--btn-theme-icon', darkTheme.value ? "url(https://img.icons8.com/office/80/null/bright-moon.png)" : "url(https://img.icons8.com/office/80/null/summer.png)")
@@ -55,19 +55,17 @@ const handleTheme = () => {
         margin: 0 0 50px 10px;
         padding: 0 0 0 0;
         content: var(--btn-theme-icon) !important;
-        transition: height 0.7s, width 0.7s, opacity 1.5s, margin-top 1s;
+        transition: height 0.7s, width 0.7s, opacity 0.7s, margin 0.7s;
         opacity: 0.6;
     }
 
     #boxbtn:hover {
-        height: 55px !important;
-        width: 55px !important;
-        transition: height 0.7s, width 0.7s, opacity 1.5s, margin-top 1s;
+        transition: opacity 0.7s, margin 0.7s;
         opacity: 1;
     }
 
     #boxbtn:active {
-        transition:  margin-top 1s;
+        transition:  margin 0.7s;
     }
 
     #btnthm {
